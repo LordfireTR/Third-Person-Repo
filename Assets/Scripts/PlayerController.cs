@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     float gravityBase;
     float jumpHeight;
     Vector3 jumpVector;
+    [SerializeField] private bool isJumping = false;
 
     //Handling Player Direction
     private float turnSmoothTime = 0.1f;
@@ -52,8 +53,8 @@ public class PlayerController : MonoBehaviour
         directionVector = (verticalVector + horizontalVector).normalized;
         
         //Handling Jump
-        gravityBase = -30.0f;
-        jumpHeight = 10.0f;
+        gravityBase = -9.81f;
+        jumpHeight = 2.0f;
 
         //Handling Player Direction
         bodyAngle = Mathf.Atan2(directionVector.x, directionVector.z) * Mathf.Rad2Deg;
@@ -71,7 +72,12 @@ public class PlayerController : MonoBehaviour
             moveSpeed = 0;
         }
 
-        if (!controller.isGrounded)
+        if (controller.isGrounded)
+        {
+            isJumping = false;
+        }
+
+        if (isJumping)
         {
             moveSpeed /= 2;
             jumpVector += gravityBase * Vector3.up * Time.deltaTime;
@@ -82,10 +88,11 @@ public class PlayerController : MonoBehaviour
             {
                 jumpVector += Vector3.up * Mathf.Sqrt(jumpHeight * -3.0f * gravityBase);
                 Debug.Log("SPACE");
+                isJumping = true;
             }
             if (jumpVector.y < 0)
             {
-                //jumpVector = Vector3.zero;
+                jumpVector = Vector3.zero;
             }
         }
 

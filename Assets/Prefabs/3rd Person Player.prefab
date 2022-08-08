@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2111435200713431268}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Camera Focus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,6 +114,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &8549371652378293490
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2600580645519311060}
+  m_Layer: 0
+  m_Name: Gun Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2600580645519311060
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8549371652378293490}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.95, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8723848647516957130}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8723848646921503005
 GameObject:
   m_ObjectHideFlags: 3
@@ -138,7 +169,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8723848646921503005}
-  m_LocalRotation: {x: 0.071830235, y: -0, z: -0, w: 0.9974169}
+  m_LocalRotation: {x: 0.108673826, y: -0, z: -0, w: 0.9940775}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -328,7 +359,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8723848647051471474}
-  m_LocalRotation: {x: 0.071830235, y: -0, z: -0, w: 0.9974169}
+  m_LocalRotation: {x: 0.108673826, y: -0, z: -0, w: 0.9940775}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -416,6 +447,7 @@ Transform:
   - {fileID: 8723848648514169287}
   - {fileID: 2220636551777377281}
   - {fileID: 2111435200713431268}
+  - {fileID: 2600580645519311060}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -433,6 +465,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCam: {fileID: 0}
   isJumping: 0
+  angle: 0
+  bullet: {fileID: 2579416005344346041, guid: 93396672274e39b4d8f98e78e99f8fb3, type: 3}
 --- !u!143 &3225243588190155377
 CharacterController:
   m_ObjectHideFlags: 0
@@ -587,7 +621,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8723848647808521529}
-  m_LocalRotation: {x: 0.071830235, y: -0, z: -0, w: 0.9974169}
+  m_LocalRotation: {x: 0.108673826, y: -0, z: -0, w: 0.9940775}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -778,7 +812,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8723848648336735854}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5, z: -10}
+  m_LocalPosition: {x: 0, y: 3.3000002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -807,7 +841,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 8723848648514169287}
-  m_Follow: {fileID: 8723848647516957130}
+  m_Follow: {fileID: 2111435200713431268}
   m_CommonLens: 1
   m_Lens:
     FieldOfView: 40

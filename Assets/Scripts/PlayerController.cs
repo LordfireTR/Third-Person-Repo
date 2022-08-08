@@ -29,23 +29,29 @@ public class PlayerController : MonoBehaviour
     private float turnSmoothVelocity;
     float bodyAngle;
     float targetAngle;
-    float angle;
+    public float angle;
+
+    //Hangling the Gun
+    Transform gunPoint;
+    [SerializeField] GameObject bullet;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        gunPoint = transform.GetChild(4);
     }
 
     // Update is called once per frame
     void Update()
     {
         PlayerMovement();
+        FireBullet();
     }
 
     void PlayerMovement()
     {
         //Handling Movement Speed
-        moveSpeed = 20.0f;
+        moveSpeed = 15.0f;
 
         //Getting Inputs as Vector3
         verticalVector = Vector3.forward * Input.GetAxisRaw("Vertical");
@@ -62,7 +68,7 @@ public class PlayerController : MonoBehaviour
         targetAngle = bodyAngle + mainCam.eulerAngles.y;
         angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
 
-        transform.rotation = Quaternion.Euler(0, angle, 0);
+        transform.rotation = Quaternion.Euler(0, mainCam.eulerAngles.y, 0);
         
         moveDirection =  Quaternion.Euler(0, targetAngle, 0) * Vector3.forward;
 
@@ -98,5 +104,13 @@ public class PlayerController : MonoBehaviour
 
         speedVector = moveDirection.normalized * moveSpeed + jumpVector;
         controller.Move(speedVector * Time.deltaTime);
+    }
+
+    void FireBullet()
+    {
+        if(Input.GetButtonDown("Fire1"))
+        {
+            Instantiate(bullet, gunPoint.position, Quaternion.Euler(90, angle, 0));
+        }
     }
 }

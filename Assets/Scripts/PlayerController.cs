@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     CharacterController controller;
     [SerializeField] private Transform mainCam;
+    //float defaultHeight;
 
     //Handling Movement Speed
     private float moveSpeed;
@@ -31,14 +32,20 @@ public class PlayerController : MonoBehaviour
     float targetAngle;
     public float angle;
 
-    //Hangling the Gun
+    //Handling Gun Controls
     Transform gunPoint;
     [SerializeField] GameObject bullet;
+
+    //Handling Crouch
+    // Transform playerBody;
+    // bool isCrouching = false;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
         gunPoint = transform.GetChild(4);
+        //playerBody = transform.GetChild(2);
+        //defaultHeight = controller.height;
     }
 
     // Update is called once per frame
@@ -46,6 +53,7 @@ public class PlayerController : MonoBehaviour
     {
         PlayerMovement();
         FireBullet();
+        //Crouch();
     }
 
     void PlayerMovement()
@@ -108,9 +116,30 @@ public class PlayerController : MonoBehaviour
 
     void FireBullet()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetKeyDown(KeyCode.Mouse0))
         {
             Instantiate(bullet, gunPoint.position, Quaternion.Euler(90, angle, 0));
         }
     }
+
+    // void Crouch()
+    // {
+    //     float crouchScale = 0.5f;
+
+    //     if(Input.GetKeyDown(KeyCode.LeftControl))
+    //     {
+    //         isCrouching = !isCrouching;
+    //     }
+
+    //     if(isCrouching)
+    //     {
+    //         playerBody.transform.localScale = new Vector3(1, crouchScale, 1);
+    //         controller.height = defaultHeight * crouchScale;
+    //     }
+    //     else
+    //     {
+    //         playerBody.transform.localScale = Vector3.one;
+    //         controller.height = defaultHeight;
+    //     }
+    // }
 }

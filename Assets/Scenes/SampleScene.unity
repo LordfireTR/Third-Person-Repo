@@ -501,10 +501,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3538074862301807649, guid: f368546a697482345bda2ff1002e1c05, type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 2579416005344346041, guid: 93396672274e39b4d8f98e78e99f8fb3, type: 3}
     - target: {fileID: 8723848647516957130, guid: f368546a697482345bda2ff1002e1c05, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -554,13 +550,8 @@ PrefabInstance:
       value: 3rd Person Player
       objectReference: {fileID: 0}
     - target: {fileID: 8723848647516957133, guid: f368546a697482345bda2ff1002e1c05, type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 2579416005344346041, guid: 93396672274e39b4d8f98e78e99f8fb3, type: 3}
-    - target: {fileID: 8723848647516957133, guid: f368546a697482345bda2ff1002e1c05, type: 3}
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 963194228}
-    m_RemovedComponents:
-    - {fileID: 3538074862301807649, guid: f368546a697482345bda2ff1002e1c05, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f368546a697482345bda2ff1002e1c05, type: 3}

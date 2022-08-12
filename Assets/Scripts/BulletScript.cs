@@ -28,4 +28,9 @@ public class BulletScript : MonoBehaviour
         yield return new WaitForSeconds(bulletDuration);
         Destroy(gameObject);
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        other.gameObject.SetActive(false);
+    }
 }

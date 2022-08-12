@@ -116,9 +116,14 @@ public class PlayerController : MonoBehaviour
 
     void FireBullet()
     {
+
+        float offsetAxisX = 12;
+        offsetAxisX = 90 - offsetAxisX;
+        gunPoint.rotation = mainCam.transform.rotation;
+        gunPoint.Rotate(offsetAxisX, 0, 0, Space.Self);
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Instantiate(bullet, gunPoint.position, Quaternion.Euler(90, angle, 0));
+            Instantiate(bullet, gunPoint.position, gunPoint.rotation);
         }
     }
 

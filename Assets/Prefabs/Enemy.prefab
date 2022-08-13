@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turret: {fileID: 3083785687523581571}
   gunPoint: {fileID: 6751185806085273657}
-  bullet: {fileID: 3593825407237249256, guid: e834f978b2154524d8bd521139c2e2c8, type: 3}
+  bullet: {fileID: 3421928839312249939, guid: b73d46d8c35541848a4dbf67c43af320, type: 3}
   player: {fileID: 0}
 --- !u!1 &3083785687523581571
 GameObject:

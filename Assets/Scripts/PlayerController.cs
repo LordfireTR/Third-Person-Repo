@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     CharacterController controller;
     [SerializeField] private Transform mainCam;
-    //float defaultHeight;
+    
 
     //Handling Movement Speed
     private float moveSpeed;
@@ -36,9 +36,9 @@ public class PlayerController : MonoBehaviour
     Transform gunPoint;
     [SerializeField] GameObject bullet;
 
-    //Handling Crouch
-    // Transform playerBody;
-    // bool isCrouching = false;
+    //Handle Pause Game
+    public GameObject pauseScreen;
+    public bool isPaused;
 
     void Start()
     {
@@ -46,13 +46,19 @@ public class PlayerController : MonoBehaviour
         gunPoint = transform.GetChild(4);
         //playerBody = transform.GetChild(2);
         //defaultHeight = controller.height;
+
+        pauseScreen.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        PlayerMovement();
-        FireBullet();
+        if (!isPaused)
+        {
+            PlayerMovement();
+            FireBullet();
+        }
+        PauseGame();
         //Crouch();
     }
 
@@ -124,6 +130,25 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
             Instantiate(bullet, gunPoint.position, gunPoint.rotation);
+        }
+    }
+
+    void PauseGame()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!isPaused)
+            {
+	            Time.timeScale = 0;
+	            isPaused = true;
+	            pauseScreen.gameObject.SetActive(true);
+            }
+            else
+            {
+                Time.timeScale = 1;
+                isPaused = false;
+                pauseScreen.gameObject.SetActive(false);
+            }
         }
     }
 

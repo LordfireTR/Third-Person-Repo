@@ -31,6 +31,13 @@ public class BulletScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        other.gameObject.SetActive(false);
+        if (other.CompareTag("Player"))
+        {
+            other.GetComponent<PlayerController>().isGameOver = true;
+        }
+        else
+        {
+            other.gameObject.SetActive(false);
+        }
     }
 }

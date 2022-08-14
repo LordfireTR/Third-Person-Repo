@@ -40,6 +40,10 @@ public class PlayerController : MonoBehaviour
     public GameObject pauseScreen;
     public bool isPaused;
 
+    //Handle Game Over
+    public GameObject gameOverScreen;
+    public bool isGameOver;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -48,17 +52,27 @@ public class PlayerController : MonoBehaviour
         //defaultHeight = controller.height;
 
         pauseScreen.gameObject.SetActive(false);
+        gameOverScreen.gameObject.SetActive(false);
+        isGameOver = false;
+        isPaused = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!isPaused)
+        if (!isPaused && !isGameOver)
         {
             PlayerMovement();
             FireBullet();
         }
-        PauseGame();
+        if (!isGameOver)
+        {
+            PauseGame();
+        }
+        if (isGameOver)
+        {
+            GameOver();
+        }
         //Crouch();
     }
 
@@ -150,6 +164,12 @@ public class PlayerController : MonoBehaviour
                 pauseScreen.gameObject.SetActive(false);
             }
         }
+    }
+
+    void GameOver()
+    {
+        Time.timeScale = 0;
+        gameOverScreen.SetActive(true);
     }
 
     // void Crouch()

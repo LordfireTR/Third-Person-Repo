@@ -60,15 +60,17 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isPaused && !isGameOver)
+        PlayerMovement();
+        if(Input.GetKeyDown(KeyCode.Mouse0))
         {
-            PlayerMovement();
-            FireBullet();
+            if(!isPaused && !isGameOver)
+            {
+                FireBullet();
+            }
         }
-        if (!isGameOver)
-        {
-            PauseGame();
-        }
+        
+        PauseGame();
+
         if (isGameOver)
         {
             GameOver();
@@ -136,32 +138,22 @@ public class PlayerController : MonoBehaviour
 
     void FireBullet()
     {
-
         float offsetAxisX = 12;
         offsetAxisX = 90 - offsetAxisX;
         gunPoint.rotation = mainCam.transform.rotation;
         gunPoint.Rotate(offsetAxisX, 0, 0, Space.Self);
-        if(Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            Instantiate(bullet, gunPoint.position, gunPoint.rotation);
-        }
+        Instantiate(bullet, gunPoint.position, gunPoint.rotation);
     }
 
     void PauseGame()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!isPaused)
+            if (!isGameOver)
             {
-	            Time.timeScale = 0;
-	            isPaused = true;
-	            pauseScreen.gameObject.SetActive(true);
-            }
-            else
-            {
-                Time.timeScale = 1;
-                isPaused = false;
-                pauseScreen.gameObject.SetActive(false);
+                Time.timeScale = 1 - Time.timeScale;
+                isPaused = !isPaused;
+                pauseScreen.gameObject.SetActive(isPaused);
             }
         }
     }

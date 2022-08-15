@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     public float angle;
 
     //Handling Gun Controls
+    Transform turret;
     Transform gunPoint;
     [SerializeField] GameObject bullet;
 
@@ -47,7 +48,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        gunPoint = transform.GetChild(4);
+        turret = transform.GetChild(0).GetChild(0);
+        gunPoint = turret.GetChild(0).GetChild(0);
         //playerBody = transform.GetChild(2);
         //defaultHeight = controller.height;
 
@@ -61,13 +63,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         PlayerMovement();
-        if(Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            if(!isPaused && !isGameOver)
-            {
-                FireBullet();
-            }
-        }
+        FireBullet();
         
         PauseGame();
 
@@ -138,11 +134,14 @@ public class PlayerController : MonoBehaviour
 
     void FireBullet()
     {
-        float offsetAxisX = 12;
-        offsetAxisX = 90 - offsetAxisX;
-        gunPoint.rotation = mainCam.transform.rotation;
-        gunPoint.Rotate(offsetAxisX, 0, 0, Space.Self);
-        Instantiate(bullet, gunPoint.position, gunPoint.rotation);
+        float offsetAxisX = -12;
+        //offsetAxisX = 90 - offsetAxisX;
+        turret.rotation = mainCam.transform.rotation;
+        turret.Rotate(offsetAxisX, 0, 0, Space.Self);
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Instantiate(bullet, gunPoint.position, gunPoint.rotation);
+        }
     }
 
     void PauseGame()

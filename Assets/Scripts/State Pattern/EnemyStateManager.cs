@@ -7,10 +7,6 @@ public class EnemyStateManager : MonoBehaviour
     EnemyBaseState currentState;
     public EnemyActive ActiveState = new EnemyActive();
     public EnemyIdle IdleState = new EnemyIdle();
-
-    public Transform player;
-    public Transform turret;
-    public float turretRange = 20.0f;
     
     void Start()
     {

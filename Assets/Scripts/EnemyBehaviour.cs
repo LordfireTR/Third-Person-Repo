@@ -9,22 +9,18 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] GameObject bullet;
     [SerializeField] Transform player;
 
-    float fireCooldown;
-    float _fireCooldown = 1;
+    [SerializeField] float fireCooldown;
+    [SerializeField] float _fireCooldown;
+
+    [SerializeField] float turretRange = 20.0f;
     // Start is called before the first frame update
     void Start()
     {
+        _fireCooldown = 2;
         fireCooldown = 3;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        AimAtPlayer();
-        FireBullet();
-    }
-
-    void AimAtPlayer()
+    public void AimAtPlayer()
     {
         turret.transform.LookAt(player);
         if (turret.transform.localEulerAngles.x < 360.0f)
@@ -40,7 +36,7 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
-    void FireBullet()
+    public void FireBullet()
     {
         if (fireCooldown <= 0)
         {
@@ -51,5 +47,10 @@ public class EnemyBehaviour : MonoBehaviour
         {
             fireCooldown -= Time.deltaTime;
         }
+    }
+
+    public bool InRange()
+    {
+        return ((player.position - transform.position).magnitude < turretRange);
     }
 }

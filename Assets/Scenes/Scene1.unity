@@ -403,10 +403,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1446926201}
-    - target: {fileID: 1883647866, guid: 8f293c617656ae84aa8303bdd2055ebf, type: 3}
-      propertyPath: turret
-      value: 
-      objectReference: {fileID: 616392067}
     - target: {fileID: 2202805878585367888, guid: 8f293c617656ae84aa8303bdd2055ebf, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -595,11 +591,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 416981987}
   m_CullTransparentMesh: 1
---- !u!4 &616392067 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5675857368961313857, guid: 8f293c617656ae84aa8303bdd2055ebf, type: 3}
-  m_PrefabInstance: {fileID: 201947632}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &690713360
 GameObject:
   m_ObjectHideFlags: 0

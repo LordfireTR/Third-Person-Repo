@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class EnemyIdle : EnemyBaseState
 {
+    EnemyBehaviour EnemyBehaviour;
     public override void EnterState(EnemyStateManager enemy)
     {
-        Debug.Log("Idle");
+        EnemyBehaviour = enemy.GetComponent<EnemyBehaviour>();
     }
 
     public override void UpdateState(EnemyStateManager enemy)
     {
-        if ((enemy.turret.position - enemy.player.position).magnitude <= enemy.turretRange)
+        if (EnemyBehaviour.InRange())
         {
             enemy.SwitchState(enemy.ActiveState);
         }

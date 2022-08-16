@@ -399,6 +399,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1883647866, guid: 8f293c617656ae84aa8303bdd2055ebf, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1446926201}
+    - target: {fileID: 1883647866, guid: 8f293c617656ae84aa8303bdd2055ebf, type: 3}
+      propertyPath: turret
+      value: 
+      objectReference: {fileID: 616392067}
     - target: {fileID: 2202805878585367888, guid: 8f293c617656ae84aa8303bdd2055ebf, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -587,6 +595,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 416981987}
   m_CullTransparentMesh: 1
+--- !u!4 &616392067 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5675857368961313857, guid: 8f293c617656ae84aa8303bdd2055ebf, type: 3}
+  m_PrefabInstance: {fileID: 201947632}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &690713360
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,7 +1003,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.10867385, y: 0, z: 0, w: 0.9940775}
+  m_LocalRotation: {x: 0.111089535, y: 0, z: 0, w: 0.9938104}
   m_LocalPosition: {x: 0, y: 4.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1763,27 +1776,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c556b1c8b67fdd149825af87181b9fae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1883647859 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2202805878585367888, guid: 8f293c617656ae84aa8303bdd2055ebf, type: 3}
-  m_PrefabInstance: {fileID: 201947632}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1883647865
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1883647859}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1905927108
 GameObject:
   m_ObjectHideFlags: 0

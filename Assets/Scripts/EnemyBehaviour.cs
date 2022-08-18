@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    [SerializeField] GameObject turret;
+    [SerializeField] Transform turret;
+    [SerializeField] Transform compass;
     [SerializeField] Transform gunPoint;
-    [SerializeField] GameObject bullet;
     [SerializeField] Transform player;
+    [SerializeField] GameObject bullet;
 
     [SerializeField] float fireCooldown;
     [SerializeField] float _fireCooldown;
@@ -22,16 +23,18 @@ public class EnemyBehaviour : MonoBehaviour
 
     public void AimAtPlayer()
     {
-        turret.transform.LookAt(player);
-        if (turret.transform.localEulerAngles.x < 360.0f)
+        compass.LookAt(player);
+        turret.rotation = Quaternion.RotateTowards(turret.rotation, compass.rotation, 1.0f);
+        
+        if (turret.localEulerAngles.x < 360.0f)
         {
-            if (turret.transform.localEulerAngles.x < 345.0f && turret.transform.localEulerAngles.x > 180.0f)
+            if (turret.localEulerAngles.x < 345.0f && turret.localEulerAngles.x > 180.0f)
             {
-                turret.transform.localEulerAngles = new Vector3(345.0f, turret.transform.localEulerAngles.y, turret.transform.localEulerAngles.z);
+                turret.localEulerAngles = new Vector3(345.0f, turret.localEulerAngles.y, turret.localEulerAngles.z);
             }
-            else if(turret.transform.localEulerAngles.x > 10.0f && turret.transform.localEulerAngles.x <= 180.0f)
+            else if(turret.localEulerAngles.x > 10.0f && turret.localEulerAngles.x <= 180.0f)
             {
-                turret.transform.localEulerAngles = new Vector3(10.0f, turret.transform.localEulerAngles.y, turret.transform.localEulerAngles.z);
+                turret.localEulerAngles = new Vector3(10.0f, turret.localEulerAngles.y, turret.localEulerAngles.z);
             }
         }
     }
@@ -52,5 +55,11 @@ public class EnemyBehaviour : MonoBehaviour
     public bool InRange()
     {
         return ((player.position - transform.position).magnitude < turretRange);
+    }
+
+    public void IdlePose()
+    {
+        compass.localEulerAngles = Vector3.zero;
+        turret.rotation = Quaternion.RotateTowards(turret.rotation, compass.rotation, 1.0f);
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyIdle : EnemyBaseState
 {
     EnemyBehaviour EnemyBehaviour;
+
     public override void EnterState(EnemyStateManager enemy)
     {
         EnemyBehaviour = enemy.GetComponent<EnemyBehaviour>();
@@ -12,6 +13,9 @@ public class EnemyIdle : EnemyBaseState
 
     public override void UpdateState(EnemyStateManager enemy)
     {
+        EnemyBehaviour.IdlePose();
+        
+
         if (EnemyBehaviour.InRange())
         {
             enemy.SwitchState(enemy.ActiveState);

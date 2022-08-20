@@ -15,7 +15,6 @@ public class EnemyIdle : EnemyBaseState
     {
         EnemyBehaviour.IdlePose();
         
-
         if (EnemyBehaviour.InRange())
         {
             enemy.SwitchState(enemy.ActiveState);

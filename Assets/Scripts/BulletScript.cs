@@ -40,7 +40,7 @@ public class BulletScript : MonoBehaviour
             Debug.Log("Oopsie!");
             other.gameObject.SetActive(false);
         }
-        else if(other.CompareTag("Environment"))
+        else if(other.CompareTag("Environment") || other.CompareTag("Ground"))
         {
             gameObject.SetActive(false);
         }

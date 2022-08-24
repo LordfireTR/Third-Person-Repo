@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1938838821451261594}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Gun Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4965173008970201}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.22, z: 1}
+  m_LocalPosition: {x: 0, y: 0.22, z: 1.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 5101416034110272700}
   - component: {fileID: 7489758252055241835}
   - component: {fileID: 4316845197996173827}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Turret Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248831619430563409}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.656, z: 0}
+  m_LocalPosition: {x: 0, y: 0.55, z: 0}
   m_LocalScale: {x: 1.4, y: 0.25, z: 1.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 3833532399418213783}
   - component: {fileID: 983278288261239963}
   - component: {fileID: 1242089866760560426}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 5121259549305460901}
   - component: {fileID: 2626074815052321671}
   - component: {fileID: 3278563102548235839}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1550331888414294120}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.8685, z: 0}
+  m_LocalPosition: {x: 0, y: 0.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -291,7 +291,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1404666849111975885}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Compass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,7 +306,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3482475753869717141}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.95, z: 0}
+  m_LocalPosition: {x: 0, y: 0.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 1499793824363160068}
   - component: {fileID: 5877903684560528182}
   - component: {fileID: 2360694789046478073}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Gun Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -398,7 +398,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &4269452498769652596
+--- !u!1 &5569611039547985109
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -406,46 +406,148 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4157448471242831372}
-  - component: {fileID: 4517754331602325257}
-  - component: {fileID: 5616844185760423587}
-  m_Layer: 0
-  m_Name: Body
-  m_TagString: Untagged
+  - component: {fileID: 2821818154492253405}
+  - component: {fileID: 6558266648469447293}
+  - component: {fileID: 3918669987534452773}
+  - component: {fileID: 1372153138}
+  - component: {fileID: 6504051283653958977}
+  m_Layer: 2
+  m_Name: Enemy 1
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4157448471242831372
+--- !u!4 &2821818154492253405
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4269452498769652596}
+  m_GameObject: {fileID: 5569611039547985109}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.25, z: 0}
-  m_LocalScale: {x: 1.5, y: 0.5, z: 1.5}
+  m_LocalPosition: {x: 0, y: 0.546, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5280459289347949787}
+  - {fileID: 5101416034110272700}
+  - {fileID: 1404666849111975885}
+  - {fileID: 5121259549305460901}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6558266648469447293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5569611039547985109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43651cbaf1645794ab1a291546d82b55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turret: {fileID: 5121259549305460901}
+  compass: {fileID: 1404666849111975885}
+  gunPoint: {fileID: 1938838821451261594}
+  player: {fileID: 0}
+  bullet: {fileID: 3421928839312249939, guid: b73d46d8c35541848a4dbf67c43af320, type: 3}
+  fireCooldown: 0
+  _fireCooldown: 0
+  turretRange: 20
+  turretLowerLimit: 50
+  turretUpperLimit: 345
+--- !u!114 &3918669987534452773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5569611039547985109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede49f1af6e554943af4e761541a0e40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &1372153138
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5569611039547985109}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &6504051283653958977
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5569611039547985109}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2665021, y: 1.799343, z: 1.2553973}
+  m_Center: {x: 0, y: 0.3539948, z: 0.00000011920929}
+--- !u!1 &5995118558334679017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5280459289347949787}
+  - component: {fileID: 7209636506422032867}
+  - component: {fileID: 4244035505280533909}
+  m_Layer: 2
+  m_Name: Turret Body
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5280459289347949787
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5995118558334679017}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.42, y: 0.55, z: 1.42}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2821818154492253405}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4517754331602325257
+--- !u!33 &7209636506422032867
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4269452498769652596}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &5616844185760423587
+  m_GameObject: {fileID: 5995118558334679017}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &4244035505280533909
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4269452498769652596}
+  m_GameObject: {fileID: 5995118558334679017}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -481,105 +583,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &5569611039547985109
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2821818154492253405}
-  - component: {fileID: 6558266648469447293}
-  - component: {fileID: 3918669987534452773}
-  - component: {fileID: 4100116554306789824}
-  - component: {fileID: 4949775817837014363}
-  m_Layer: 0
-  m_Name: Enemy 1
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2821818154492253405
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5569611039547985109}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4157448471242831372}
-  - {fileID: 5101416034110272700}
-  - {fileID: 1404666849111975885}
-  - {fileID: 5121259549305460901}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6558266648469447293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5569611039547985109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43651cbaf1645794ab1a291546d82b55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turret: {fileID: 5121259549305460901}
-  compass: {fileID: 1404666849111975885}
-  gunPoint: {fileID: 1938838821451261594}
-  player: {fileID: 0}
-  bullet: {fileID: 3421928839312249939, guid: b73d46d8c35541848a4dbf67c43af320, type: 3}
-  fireCooldown: 0
-  _fireCooldown: 0
-  turretRange: 20
-  turretLowerLimit: 10
-  turretUpperLimit: 345
---- !u!114 &3918669987534452773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5569611039547985109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ede49f1af6e554943af4e761541a0e40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!65 &4100116554306789824
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5569611039547985109}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.46, y: 0.80348516, z: 1.46}
-  m_Center: {x: 0.0018799305, y: 0.40318835, z: 0.00087070465}
---- !u!135 &4949775817837014363
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5569611039547985109}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0.87, z: 0}
 --- !u!1 &8178027498356085924
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,7 +594,7 @@ GameObject:
   - component: {fileID: 8389012551989079264}
   - component: {fileID: 1828905915471028865}
   - component: {fileID: 5877364171764751469}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Barrel Tip
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -35,9 +35,14 @@ public class BulletScript : MonoBehaviour
         {
             other.GetComponent<PlayerController>().isGameOver = true;
         }
-        else
+        else if (other.CompareTag("Enemy"))
         {
+            Debug.Log("Oopsie!");
             other.gameObject.SetActive(false);
+        }
+        else if(other.CompareTag("Environment"))
+        {
+            gameObject.SetActive(false);
         }
     }
 }

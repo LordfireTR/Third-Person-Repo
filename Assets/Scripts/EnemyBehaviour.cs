@@ -14,8 +14,8 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] float _fireCooldown;
 
     [SerializeField] float turretRange = 20.0f;
-    [SerializeField] float turretLowerLimit = 345.0f;
-    [SerializeField] float turretUpperLimit = 10.0f;
+    [SerializeField] float turretLowerLimit = 10.0f;
+    [SerializeField] float turretUpperLimit = 345.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,21 +23,34 @@ public class EnemyBehaviour : MonoBehaviour
         fireCooldown = 3;
     }
 
+    public bool WaitBeforeDeactivate(float seconds)
+    {
+        return (seconds <= 0);
+    }
+
     public void AimAtPlayer()
     {
-        compass.LookAt(player);
-        turret.rotation = Quaternion.RotateTowards(turret.rotation, compass.rotation, 1.0f);
-        
-        
+        TurretControl(player.position);
+    }
+
+    public void IdlePose()
+    {
+        TurretControl(Vector3.zero);
+    }
+
+    private void TurretControl(Vector3 target)
+    {
+        compass.LookAt(target);
         if (compass.localEulerAngles.x < turretUpperLimit && compass.localEulerAngles.x > 180.0f)
         {
-            turret.localEulerAngles = new Vector3(turretUpperLimit, compass.localEulerAngles.y, compass.localEulerAngles.z);
+            compass.localEulerAngles = new Vector3(turretUpperLimit, compass.localEulerAngles.y, compass.localEulerAngles.z);
         }
         else if(compass.localEulerAngles.x > turretLowerLimit && compass.localEulerAngles.x <= 180.0f)
         {
-            turret.localEulerAngles = new Vector3(turretLowerLimit, compass.localEulerAngles.y, compass.localEulerAngles.z);
+            compass.localEulerAngles = new Vector3(turretLowerLimit, compass.localEulerAngles.y, compass.localEulerAngles.z);
         }
-        
+
+        turret.rotation = Quaternion.RotateTowards(turret.rotation, compass.rotation, 1.0f);
     }
 
     public void FireBullet()
@@ -59,13 +72,18 @@ public class EnemyBehaviour : MonoBehaviour
 
     public bool InRange()
     {
-        return ((player.position - transform.position).magnitude < turretRange);
-    }
+        Vector3 playerDirection = (player.position-turret.position).normalized;
+        RaycastHit hit;
 
-    public void IdlePose()
-    {
-        compass.localEulerAngles = Vector3.zero;
-        turret.rotation = Quaternion.RotateTowards(turret.rotation, compass.rotation, 1.0f);
+        if (Physics.Raycast(turret.position, playerDirection, out hit, turretRange))
+        {
+            return hit.collider.CompareTag("Player");
+        }
+        else
+        {
+            return false;
+        }
+        //return ((player.position - transform.position).magnitude < turretRange);
     }
 
     private Vector3 GaussianRandom()
